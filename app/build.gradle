@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'realm-android'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "beniso.id.isotakon"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    implementation 'com.google.firebase:firebase-auth:16.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:$android_support"
+    implementation "com.android.support:design:$android_support"
+    implementation "com.android.support:support-annotations:$android_support"
+    implementation "com.android.support:recyclerview-v7:$android_support"
+    implementation "com.android.support:cardview-v7:$android_support"
+    implementation "com.android.support:support-vector-drawable:$android_support"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:1.5.0@aar'
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'co.zsmb:materialdrawer-kt:1.3.5'
+    implementation 'com.github.k0shk0sh:PermissionHelper:1.1.0'
+    implementation 'com.mikepenz:community-material-typeface:2.0.46.1'
+    implementation 'com.mikepenz:fontawesome-typeface:4.7.0.1@aar'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+    //implementation 'com.github.ybq:Android-SpinKit:1.1.0'
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    //implementation 'com.github.badoualy:stepper-indicator:1.0.7'
+    //implementation 'com.github.chrisbanes:PhotoView:2.1.3'
+    implementation 'com.android.support:multidex:1.0.3'
+    annotationProcessor 'dk.ilios:realmfieldnameshelper:1.1.1'
+    kapt 'dk.ilios:realmfieldnameshelper:1.1.1'
+    implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
+    debugImplementation 'com.readystatesoftware.chuck:library:1.1.0'
+    releaseImplementation 'com.readystatesoftware.chuck:library-no-op:1.1.0'
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
+
+}
+
+apply plugin: 'com.google.gms.google-services'

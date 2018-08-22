@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">IsoTakon</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="ok">Ok</string>
+    <string name="realm_file_name">Realm File Name</string>
+    <string name="caption_close">Close</string>
+    <string name="caption_alert">Peringatan</string>
+</resources>

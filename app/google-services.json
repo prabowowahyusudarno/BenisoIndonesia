@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1015616134278",
+    "firebase_url": "https://isotakon.firebaseio.com",
+    "project_id": "isotakon",
+    "storage_bucket": "isotakon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015616134278:android:1cc976edac15f213",
+        "android_client_info": {
+          "package_name": "beniso.id.isotakon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015616134278-7nma3kf7961dbic9d8rc45fbnufit8eo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "beniso.id.isotakon",
+            "certificate_hash": "18f50fa6eb06afbf3869a3e682c6abe35a4c37b2"
+          }
+        },
+        {
+          "client_id": "1015616134278-ebeaibbcgo9osune5i0cfj1e5sr41957.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDviqit93n53i6k9ZIifqUox3gMk0FpIcs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015616134278-ebeaibbcgo9osune5i0cfj1e5sr41957.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
