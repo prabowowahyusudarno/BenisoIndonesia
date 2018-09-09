@@ -3,17 +3,17 @@
 
     <item
         android:id="@+id/navigation_isojawab"
-        android:icon="@drawable/isoJawab"
+        android:icon="@drawable/ic_isojawab"
         android:title="@string/title_isojawab" />
 
     <item
         android:id="@+id/navigation_isoles"
-        android:icon="@drawable/isoLes"
+        android:icon="@drawable/ic_isoles"
         android:title="@string/title_isoles" />
 
     <item
         android:id="@+id/navigation_akun"
-        android:icon="@drawable/isoAkun"
+        android:icon="@drawable/ic_isoakun"
         android:title="@string/title_akun" />
 
 </menu>

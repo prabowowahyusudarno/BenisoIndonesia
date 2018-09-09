@@ -35,6 +35,7 @@
     <color name="grey_60">#666666</color>
     <color name="grey_80">#37474F</color>
     <color name="grey_90">#263238</color>
+    <color name="grey_text">#B9B9B9</color>
 
 
     <!--Material color list from https://material.io/guidelines/style/color.html-->
