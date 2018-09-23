@@ -98,7 +98,8 @@
                 android:text="DAFTAR"
                 android:textColor="#ffffff"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/bt_daftar_signup"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -145,7 +146,8 @@
                 android:text="MASUK"
                 android:textColor="@color/primary_dark"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:id="@+id/bt_masuk_signup"/>
 
 
         </LinearLayout>
