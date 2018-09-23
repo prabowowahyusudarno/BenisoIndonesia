@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity(), IsoJawabFragment.OnFragmentInteraction
         false
     }
 
+
     private fun openFragment(fragment: Fragment) {
         val transction = supportFragmentManager.beginTransaction()
         transction.replace(R.id.container, fragment)
@@ -56,5 +57,13 @@ class MainActivity : AppCompatActivity(), IsoJawabFragment.OnFragmentInteraction
 
     override fun onFragmentInteraction(uri: Uri) {
 
+    }
+
+    override fun onBackPressed() {
+        if (bottomNavigation.selectedItemId == R.id.navigation_isojawab) {
+            super.onBackPressed()
+        } else {
+            bottomNavigation.selectedItemId = R.id.navigation_isojawab
+        }
     }
 }

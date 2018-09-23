@@ -5,7 +5,7 @@
     android:id="@+id/nested_scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_10"
+    android:background="@color/grey_3"
     android:scrollbars="none"
     android:scrollingCache="true">
 
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:visibility="visible"
             app:cardCornerRadius="0dp"
-            app:cardElevation="1dp">
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:id="@+id/lyt_parent"
@@ -53,6 +53,7 @@
 
                     <LinearLayout
                         android:layout_width="0dp"
+                        android:padding="@dimen/spacing_medium"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
@@ -124,7 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_xmedium"
             app:cardCornerRadius="0dp"
-            app:cardElevation="2dp">
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -179,7 +180,7 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="1px"
                     android:background="?android:attr/dividerVertical"/>
 
                 <LinearLayout
@@ -236,7 +237,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_xmedium"
             app:cardCornerRadius="0dp"
-            app:cardElevation="2dp">
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -248,6 +249,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
+                    android:focusable="true"
                     android:minHeight="?attr/actionBarSize"
                     android:orientation="horizontal">
 
@@ -308,7 +310,7 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="1px"
                     android:background="?android:attr/dividerVertical"/>
 
                 <LinearLayout
@@ -316,6 +318,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
+                    android:focusable="true"
                     android:minHeight="?attr/actionBarSize"
                     android:orientation="horizontal">
 
@@ -374,7 +377,7 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="1px"
                     android:background="?android:attr/dividerVertical"/>
 
                 <LinearLayout
@@ -382,6 +385,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
+                    android:focusable="true"
                     android:minHeight="?attr/actionBarSize"
                     android:orientation="horizontal">
 
@@ -440,7 +444,7 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="1px"
                     android:background="?android:attr/dividerVertical"/>
 
                 <LinearLayout
@@ -448,6 +452,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
+                    android:focusable="true"
                     android:minHeight="?attr/actionBarSize"
                     android:orientation="horizontal">
 
@@ -513,7 +518,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_xmedium"
             app:cardCornerRadius="0dp"
-            app:cardElevation="2dp">
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -525,6 +530,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
+                    android:focusable="true"
                     android:minHeight="?attr/actionBarSize"
                     android:orientation="horizontal">
 

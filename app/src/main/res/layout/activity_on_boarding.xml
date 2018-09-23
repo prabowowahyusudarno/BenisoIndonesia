@@ -1,89 +1,71 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@android:color/white"
-              android:fitsSystemWindows="false"
-              android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <RelativeLayout
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5">
+        android:layout_height="match_parent"
+        android:paddingBottom="?attr/actionBarSize" />
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/white" />
-
-
-    </RelativeLayout>
-
-
-    <LinearLayout
+    <View
+        android:id="@+id/divider"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="1dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:orientation="horizontal">
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:alpha="0.12"
+        android:background="@android:color/white" />
 
-        <LinearLayout
-            android:id="@+id/lyt_skip"
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:layout_width="match_parent"
+                 android:layout_height="?attr/actionBarSize"
+                 android:layout_alignParentBottom="true"
+                 android:layout_alignParentStart="true"
+                 android:layout_gravity="bottom"
+                 android:background="@color/colorPrimary"
+                 android:paddingEnd="@dimen/dim_bottom_toolbar_margin"
+                 android:paddingLeft="@dimen/dim_bottom_toolbar_margin"
+                 android:paddingRight="@dimen/dim_bottom_toolbar_margin"
+                 android:paddingStart="@dimen/dim_bottom_toolbar_margin">
+
+        <Button
+            android:id="@+id/skip"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="@dimen/spacing_middle">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="LEWATI"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-                android:textColor="@android:color/white"
-                android:textStyle="bold" />
-
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:background="@drawable/ripple_background"
+            android:text="@string/str_token_skip"
+            android:textColor="@android:color/white"/>
 
         <LinearLayout
-            android:id="@+id/layoutDots"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="horizontal" />
-
-        <LinearLayout
-            android:id="@+id/lyt_next"
+            android:id="@+id/indicator_container"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="@dimen/spacing_middle">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BERIKUTNYA"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-                android:textColor="@android:color/white"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/finish"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center"
+            android:background="@drawable/ripple_background"
+            android:text="@string/str_token_finish"
+            android:textColor="@android:color/white"
+            android:visibility="gone"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:tint="@android:color/white"
-                app:srcCompat="@drawable/ic_chevron_right" />
-
-        </LinearLayout>
-
-</LinearLayout>
-</LinearLayout>
+        <ImageButton
+            android:id="@+id/next"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center"
+            android:background="@drawable/ripple_background"
+            android:contentDescription="@string/str_token_description_next"
+            android:padding="@dimen/dim_bottom_toolbar_margin"/>
+    </FrameLayout>
+</RelativeLayout>

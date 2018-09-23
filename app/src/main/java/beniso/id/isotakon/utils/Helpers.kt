@@ -2,7 +2,7 @@ package beniso.id.isotakon.utils
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.app.Fragment
+
 import android.content.Context
 import android.content.DialogInterface
 import android.content.pm.PackageInfo
@@ -30,15 +30,14 @@ import android.widget.Toast
 import beniso.id.isotakon.R
 import com.afollestad.materialdialogs.MaterialDialog
 import com.bumptech.glide.Glide
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
+
 import com.mikepenz.iconics.IconicsDrawable
 import com.mikepenz.iconics.typeface.IIcon
 import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader
 import com.mikepenz.materialdrawer.util.DrawerImageLoader
 import io.realm.Realm
 import io.realm.RealmConfiguration
-//import kotlinx.android.synthetic.main.layout_login_expired.view.*
+
 import okhttp3.OkHttpClient
 import java.math.BigInteger
 import java.security.KeyFactory
