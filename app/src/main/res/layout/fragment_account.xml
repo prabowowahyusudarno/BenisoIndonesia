@@ -66,6 +66,7 @@
                             android:layout_marginEnd="@dimen/spacing_middle"
                             android:layout_marginRight="@dimen/spacing_middle"
                             android:text="John Doe"
+                            android:fontFamily="@font/rubik_medium"
                             android:textColor="@color/grey_90"
                             android:textSize="16sp"
                             android:textStyle="bold"/>
@@ -73,6 +74,7 @@
 
                         <TextView
                             android:id="@+id/userEmail"
+                            android:fontFamily="@font/rubik"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="@dimen/spacing_middle"
@@ -89,6 +91,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="@dimen/spacing_middle"
+                            android:fontFamily="@font/rubik"
                             android:layout_marginRight="@dimen/spacing_middle"
                             android:layout_marginTop="@dimen/spacing_medium"
                             android:maxLines="2"
@@ -108,6 +111,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="EDIT"
+                        android:fontFamily="@font/rubik_medium"
                         android:textColor="@color/colorPrimary"
                         android:textSize="12sp"
                         android:textStyle="bold"/>
@@ -159,6 +163,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="duit"
+                        android:fontFamily="@font/rubik_medium"
                         android:textColor="@color/colorPrimary"
                         android:textSize="18sp"
                         android:textStyle="bold"/>
@@ -172,6 +177,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="10dp"
                         android:maxLines="1"
+                        android:fontFamily="@font/rubik"
                         android:text="Rp 100.000"
                         android:textColor="@color/colorPrimary"
                         android:textStyle="bold"/>
@@ -208,6 +214,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="poin"
+                        android:fontFamily="@font/rubik_medium"
                         android:textColor="@color/green_500"
                         android:textSize="18sp"
                         android:textStyle="bold"/>
@@ -221,6 +228,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="10dp"
                         android:maxLines="1"
+                        android:fontFamily="@font/rubik"
                         android:text="1807 pt"
                         android:textColor="@color/green_500"
                         android:textStyle="bold"/>
@@ -283,8 +291,8 @@
                                 android:layout_marginEnd="@dimen/spacing_middle"
                                 android:layout_marginRight="@dimen/spacing_middle"
                                 android:text="Pusat Bantuan"
-                                android:textColor="@color/grey_90"
-                                android:textStyle="bold"/>
+                                android:fontFamily="@font/rubik_bold"
+                                android:textColor="@color/grey_90"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -293,6 +301,7 @@
                                 android:layout_marginRight="@dimen/spacing_middle"
                                 android:layout_marginTop="@dimen/spacing_medium"
                                 android:maxLines="1"
+                                android:fontFamily="@font/rubik"
                                 android:text="Temukan jawaban terbaik dari pertanyaan anda"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
 
@@ -352,8 +361,8 @@
                                 android:layout_marginEnd="@dimen/spacing_middle"
                                 android:layout_marginRight="@dimen/spacing_middle"
                                 android:text="Term of Services"
-                                android:textColor="@color/grey_90"
-                                android:textStyle="bold"/>
+                                android:fontFamily="@font/rubik_bold"
+                                android:textColor="@color/grey_90"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -362,6 +371,7 @@
                                 android:layout_marginRight="@dimen/spacing_middle"
                                 android:layout_marginTop="@dimen/spacing_medium"
                                 android:maxLines="1"
+                                android:fontFamily="@font/rubik"
                                 android:text="Persetujuan dan ketentuan layana aplikasi"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
 
@@ -419,8 +429,8 @@
                                 android:layout_marginEnd="@dimen/spacing_middle"
                                 android:layout_marginRight="@dimen/spacing_middle"
                                 android:text="Privacy Policy"
-                                android:textColor="@color/grey_90"
-                                android:textStyle="bold"/>
+                                android:fontFamily="@font/rubik_bold"
+                                android:textColor="@color/grey_90"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -429,6 +439,7 @@
                                 android:layout_marginRight="@dimen/spacing_middle"
                                 android:layout_marginTop="@dimen/spacing_medium"
                                 android:maxLines="1"
+                                android:fontFamily="@font/rubik"
                                 android:text="Kebijakan tentang privasi data pengguna"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
 
@@ -486,8 +497,8 @@
                                 android:layout_marginEnd="@dimen/spacing_middle"
                                 android:layout_marginRight="@dimen/spacing_middle"
                                 android:text="Rate ISOTAKON App"
-                                android:textColor="@color/grey_90"
-                                android:textStyle="bold"/>
+                                android:fontFamily="@font/rubik_bold"
+                                android:textColor="@color/grey_90"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -496,6 +507,7 @@
                                 android:layout_marginRight="@dimen/spacing_middle"
                                 android:layout_marginTop="@dimen/spacing_medium"
                                 android:maxLines="1"
+                                android:fontFamily="@font/rubik"
                                 android:text="Berikan penilaian anda terhadap app kami"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
 
@@ -563,8 +575,8 @@
                                 android:layout_marginRight="@dimen/spacing_middle"
                                 android:layout_marginTop="@dimen/spacing_large"
                                 android:text="Keluar"
-                                android:textColor="@color/grey_90"
-                                android:textStyle="bold"/>
+                                android:fontFamily="@font/rubik_bold"
+                                android:textColor="@color/grey_90"/>
 
 
                         </LinearLayout>

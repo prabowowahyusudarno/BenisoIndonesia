@@ -1,13 +1,14 @@
-package beniso.id.isotakon.modules.isojawab
+package beniso.id.isotakon.modules.isoles
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import android.widget.LinearLayout
 import beniso.id.isotakon.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -18,13 +19,13 @@ private const val ARG_PARAM2 = "param2"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [IsoJawabFragment.OnFragmentInteractionListener] interface
+ * [IsoLesFragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [IsoJawabFragment.newInstance] factory method to
+ * Use the [IsoLesFragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class IsoJawabFragment : Fragment() {
+class IsoLesFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -40,7 +41,32 @@ class IsoJawabFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_iso_jawab, container, false)
+        val view = inflater.inflate(R.layout.fragment_iso_les, container, false)
+        val matematika = view.findViewById<LinearLayout>(R.id.matematika)
+        val kimia = view.findViewById<LinearLayout>(R.id.kimia)
+        val fisika = view.findViewById<LinearLayout>(R.id.fisika)
+        val bahasa = view.findViewById<LinearLayout>(R.id.bahasa)
+
+        matematika.setOnClickListener {
+            val intent = Intent(context, LesActivity::class.java)
+            intent.putExtra("mapel", "Matematika")
+            requireActivity().startActivity(intent)
+        }
+        kimia.setOnClickListener {
+            val intent = Intent(context, LesActivity::class.java)
+            intent.putExtra("mapel", "Kimia")
+            requireActivity().startActivity(intent)
+        }
+        fisika.setOnClickListener {
+            val intent = Intent(context, LesActivity::class.java)
+            intent.putExtra("mapel", "Fisika")
+            requireActivity().startActivity(intent)
+        }
+        bahasa.setOnClickListener {
+            val intent = Intent(context, LesActivity::class.java)
+            intent.putExtra("mapel", "Bahasa")
+            requireActivity().startActivity(intent)
+        }
         return view
     }
 
@@ -74,13 +100,13 @@ class IsoJawabFragment : Fragment() {
      * (http://developer.android.com/training/basics/fragments/communicating.html)
      * for more information.
      */
-     interface OnFragmentInteractionListener {
+    interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri)
     }
 
     companion object {
         @JvmStatic
-        fun newInstance(): IsoJawabFragment = IsoJawabFragment()
+        fun newInstance(): IsoLesFragment = IsoLesFragment()
     }
 }

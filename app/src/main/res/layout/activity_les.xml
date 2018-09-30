@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:id="@+id/parent_view"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:background="@color/grey_10">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/toolbar"
+            android:id="@+id/toolbar"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nested_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="none"
+            android:scrollingCache="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_marginLeft="@dimen/spacing_large"
+                        android:layout_marginRight="@dimen/spacing_large"
+                        android:gravity="center_vertical"
+                        android:text="Durasi"
+                        android:fontFamily="@font/rubik_bold"
+                        android:textSize="18sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4"
+                        android:paddingLeft="@dimen/spacing_middle"
+                        android:paddingRight="@dimen/spacing_middle"
+                        android:paddingBottom="@dimen/spacing_middle"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_marginEnd="@dimen/spacing_middle"
+                            android:layout_marginBottom="@dimen/spacing_middle"
+                            android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/bt_60"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_margin="@dimen/spacing_middle"
+                            android:background="@drawable/btn_background_circle"
+                            android:onClick="setSize"
+                            android:textSize="24sp"
+                            android:fontFamily="@font/rubik_bold"
+                            android:text="60"
+                            android:textColor="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/duration60"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@android:color/black"
+                                android:fontFamily="@font/rubik_medium"
+                                android:text="60 Menit"/>
+
+                            <TextView
+                                android:id="@+id/price60"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Rp 60.000"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_marginEnd="@dimen/spacing_middle"
+                            android:layout_marginBottom="@dimen/spacing_middle"
+                            android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/bt_90"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_margin="@dimen/spacing_middle"
+                            android:background="@drawable/btn_background_circle"
+                            android:onClick="setSize"
+                            android:textSize="24sp"
+                            android:fontFamily="@font/rubik_bold"
+                            android:text="90"
+                            android:textColor="@android:color/black" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@android:color/black"
+                                android:fontFamily="@font/rubik_medium"
+                                android:text="90 Menit"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Rp 85.000"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_marginEnd="@dimen/spacing_middle"
+                            android:layout_marginBottom="@dimen/spacing_middle"
+                            android:layout_height="match_parent">
+
+                            <Button
+                                android:id="@+id/bt_120"
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:layout_margin="@dimen/spacing_middle"
+                                android:background="@drawable/btn_background_circle"
+                                android:onClick="setSize"
+                                android:textSize="24sp"
+                                android:fontFamily="@font/rubik_bold"
+                                android:text="120"
+                                android:textColor="@android:color/black" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@android:color/black"
+                                android:fontFamily="@font/rubik_medium"
+                                android:text="120 Menit"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Rp 110.000"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_marginEnd="@dimen/spacing_middle"
+                            android:layout_marginBottom="@dimen/spacing_middle"
+                            android:layout_height="match_parent">
+
+                            <Button
+                                android:id="@+id/bt_240"
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:layout_margin="@dimen/spacing_middle"
+                                android:background="@drawable/btn_background_circle"
+                                android:onClick="setSize"
+                                android:textSize="24sp"
+                                android:fontFamily="@font/rubik_bold"
+                                android:text="240"
+                                android:textColor="@android:color/black" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@android:color/black"
+                                android:fontFamily="@font/rubik_medium"
+                                android:text="240 Menit"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Rp 220.000"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@android:color/white"
+                    android:layout_marginTop="@dimen/spacing_middle"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/actionBarSize"
+                            android:layout_marginLeft="@dimen/spacing_large"
+                            android:layout_marginRight="@dimen/spacing_large"
+                            android:gravity="center_vertical"
+                            android:text="Waktu &amp; Lokasi"
+                            android:fontFamily="@font/rubik_bold"
+                            android:textSize="18sp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/spacing_large"
+                            android:paddingRight="@dimen/spacing_large"
+                            android:paddingBottom="@dimen/spacing_large"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:clickable="true"
+                                android:background="@color/grey_5"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:minHeight="@dimen/spacing_xxlarge"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                   android:layout_marginStart="@dimen/spacing_large"
+                                    android:layout_height="32dp"
+                                    android:background="@android:color/transparent"
+                                    android:tint="@color/colorPrimary"
+                                    app:srcCompat="@drawable/ic_event" />
+
+                                <View
+                                    android:layout_width="@dimen/spacing_small"
+                                    android:layout_height="wrap_content" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:orientation="vertical"
+                                    android:layout_weight="1"
+                                    android:padding="@dimen/spacing_large"
+                                    android:layout_marginStart="@dimen/spacing_large"
+                                    android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="12:30"
+                                    android:fontFamily="@font/rubik"
+                                    android:textColor="@android:color/black"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Minggu, 30 Sep 2018"
+                                        android:fontFamily="@font/rubik"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                        android:textColor="@color/grey_80" />
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="@dimen/spacing_large"
+                                    android:layout_height="wrap_content" />
+
+                                <ImageButton
+                                    android:layout_width="@dimen/spacing_xmlarge"
+                                    android:layout_height="@dimen/spacing_xmlarge"
+                                    android:background="@android:color/transparent"
+                                    android:tint="@color/grey_40"
+                                    app:srcCompat="@drawable/ic_chevron_right" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/spacing_large"
+                            android:paddingRight="@dimen/spacing_large"
+                            android:paddingBottom="@dimen/spacing_large"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:clickable="true"
+                                android:background="@color/grey_5"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:minHeight="@dimen/spacing_xxlarge"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="32dp"
+                                    android:layout_marginStart="@dimen/spacing_large"
+                                    android:layout_height="32dp"
+                                    android:background="@android:color/transparent"
+                                    android:tint="@color/colorPrimary"
+                                    app:srcCompat="@drawable/ic_location" />
+
+                                <View
+                                    android:layout_width="@dimen/spacing_small"
+                                    android:layout_height="wrap_content" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:orientation="vertical"
+                                    android:layout_weight="1"
+                                    android:padding="@dimen/spacing_large"
+                                    android:layout_marginStart="@dimen/spacing_large"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Jl. Kalurang km 10, Ngalangan, Sardonoharjo"
+                                        android:fontFamily="@font/rubik"
+                                        android:maxLines="2"
+                                        android:textColor="@android:color/black"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Keterangan alamat"
+                                        android:maxLines="2"
+                                        android:fontFamily="@font/rubik"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                        android:textColor="@color/grey_80" />
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="@dimen/spacing_large"
+                                    android:layout_height="wrap_content" />
+
+                                <ImageButton
+                                    android:layout_width="@dimen/spacing_xmlarge"
+                                    android:layout_height="@dimen/spacing_xmlarge"
+                                    android:background="@android:color/transparent"
+                                    android:tint="@color/grey_40"
+                                    app:srcCompat="@drawable/ic_chevron_right" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_middle"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_marginLeft="@dimen/spacing_large"
+                        android:layout_marginRight="@dimen/spacing_large"
+                        android:gravity="center_vertical"
+                        android:text="Pembayaran"
+                        android:fontFamily="@font/rubik_bold"
+                        android:textSize="18sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/spacing_large"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/spacing_mxlarge"
+                                android:layout_height="@dimen/spacing_mxlarge"
+                                android:src="@drawable/ic_master_card" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="0dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Master Card"
+                                android:fontFamily="@font/rubik"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/grey_90" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="0dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5543 **** **** ****"
+                                android:fontFamily="@font/rubik"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/grey_60" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/grey_5" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/spacing_large"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/spacing_mxlarge"
+                                android:layout_height="@dimen/spacing_mxlarge"
+                                android:src="@drawable/ic_paypal" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="0dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pay Pal"
+                                android:fontFamily="@font/rubik"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/grey_90" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="0dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Login required"
+                                android:fontFamily="@font/rubik"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/grey_60" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/spacing_mlarge" />
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey_5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/spacing_middle">
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/spacing_small"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Harga"
+                android:textSize="18sp"
+                android:fontFamily="@font/rubik"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/grey_90" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 110.000"
+                    android:fontFamily="@font/rubik_bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/bt_add_to_cart"
+                android:layout_width="0dp"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_weight="1"
+                android:background="@drawable/btn_rounded"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/rubik_bold"
+                android:gravity="center"
+                android:text="PESAN"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -8,6 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/rubik</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="fontFamily">@font/rubik_medium</item>
+    </style>
+
     <style name="TextLabel" parent="TextAppearance.AppCompat">
 
         <item name="android:textColorHint">@color/md_white_1000</item>

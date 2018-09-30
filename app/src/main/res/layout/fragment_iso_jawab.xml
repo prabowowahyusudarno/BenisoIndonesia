@@ -43,6 +43,7 @@
                 android:layout_marginStart="4dp"
                 android:layout_weight="1"
                 android:text="duit"
+                android:fontFamily="@font/rubik_medium"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"/>
@@ -52,6 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:maxLines="1"
+                android:fontFamily="@font/rubik"
                 android:text="Rp 100.000"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"/>
@@ -85,10 +87,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/spacing_large"
                     android:layout_marginTop="@dimen/spacing_large"
+                    android:fontFamily="@font/rubik_bold"
                     android:gravity="center_vertical"
                     android:text="AYO BERTANYA!"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"/>
+                    android:textColor="@color/colorPrimary"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -112,6 +114,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
                             android:text="MATA PELAJARAN"
+                            android:fontFamily="@font/rubik"
                             android:textColor="@color/grey_40"
                             android:textSize="12sp"
                             android:textStyle="bold"/>
@@ -120,6 +123,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_small"
+                            android:fontFamily="@font/rubik"
                             android:gravity="center_vertical"
                             android:text="Pilih Jenis Mata Pelajaran"
                             android:textSize="12sp"
@@ -146,6 +150,7 @@
                         android:layout_height="120dp"
                         android:background="@color/grey_3"
                         android:gravity="top"
+                        android:fontFamily="@font/rubik"
                         android:hint="Masukkan pertanyaan anda..."
                         android:lines="4"
                         android:padding="@dimen/spacing_middle"
@@ -216,8 +221,8 @@
                     android:layout_marginTop="@dimen/spacing_large"
                     android:gravity="center_vertical"
                     android:text="RIWAYAT PERTANYAAN"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"/>
+                    android:fontFamily="@font/rubik_bold"
+                    android:textColor="@color/colorPrimary"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -233,6 +238,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="MATEMATIKA"
+                        android:fontFamily="@font/rubik"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"/>
 
@@ -242,6 +248,7 @@
                         android:layout_marginStart="@dimen/spacing_medium"
                         android:background="@color/colorPrimary"
                         android:padding="@dimen/spacing_small"
+                        android:fontFamily="@font/rubik"
                         android:text="TERJAWAB"
                         android:textColor="@android:color/white"
                         android:textSize="10sp"
@@ -257,6 +264,7 @@
                     android:layout_marginStart="@dimen/spacing_large"
                     android:layout_marginTop="@dimen/spacing_xmedium"
                     android:lines="4"
+                    android:fontFamily="@font/rubik"
                     android:text="Lorem ipsum dolor sit amet, consectetur adipiscing, elit sed"
                     android:textSize="14sp"/>
 

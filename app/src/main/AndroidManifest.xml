@@ -23,8 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".modules.onboarding.OnBoardingActivity">
-
+        <activity android:name=".modules.isoles.LesActivity">
         </activity>
     </application>
 
