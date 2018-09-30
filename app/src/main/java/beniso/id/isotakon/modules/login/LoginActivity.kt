@@ -8,6 +8,7 @@ import android.view.View
 import beniso.id.isotakon.MainActivity
 import beniso.id.isotakon.R
 import beniso.id.isotakon.modules.onboarding.OnBoardingConfig
+import beniso.id.isotakon.modules.sign_up.SignUpActivity
 import beniso.id.isotakon.utils.Helpers
 import br.com.edsilfer.android.user_onboarding.presenter.ActivityUserOnBoarding
 import com.google.android.gms.tasks.OnCompleteListener
@@ -27,24 +28,27 @@ class LoginActivity : AppCompatActivity() {
         intent.putExtra(ActivityUserOnBoarding.ARG_ONBOARDING_THEME, OnBoardingConfig.getConfiguration())
         startActivity(intent)
 
-        bt_masuk.setOnClickListener{
+        bt_masuk.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+        }
+        bt_daftar.setOnClickListener {
+            startActivity(Intent(this, SignUpActivity::class.java))
         }
 
 
     }
 
-    fun signIn(view: View, email: String, password: String){
+    fun signIn(view: View, email: String, password: String) {
         Helpers.showDialogInfo(this, R.string.caption_alert, getString(R.string.caption_close), DialogInterface.OnDismissListener {
             finish()
         }, "Wait ....")
         fbAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, OnCompleteListener<AuthResult> { task ->
-            if(task.isSuccessful){
+            if (task.isSuccessful) {
                 var intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("id", fbAuth.currentUser?.email)
                 startActivity(intent)
 
-            }else{
+            } else {
                 //showMessage(view,"Error: ${task.exception?.message}")
                 Helpers.showDialogInfo(this, R.string.caption_alert, getString(R.string.caption_close), DialogInterface.OnDismissListener {
                     finish()
