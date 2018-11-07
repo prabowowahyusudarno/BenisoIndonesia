@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "1015616134278-af39sjj2hi040bqhhkp9bm205p1l19op.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "beniso.id.isotakon",
+            "certificate_hash": "09fa9931a78e4324d88bb3218164064a5932e76b"
+          }
+        },
+        {
           "client_id": "1015616134278-ebeaibbcgo9osune5i0cfj1e5sr41957.apps.googleusercontent.com",
           "client_type": 3
         }

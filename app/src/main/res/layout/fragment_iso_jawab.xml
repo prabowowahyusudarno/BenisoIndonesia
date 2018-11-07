@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/white"
             android:gravity="center_vertical"
-            android:minHeight="?attr/actionBarSize"
+            android:minHeight="?android:attr/actionBarSize"
             android:orientation="horizontal">
 
             <View
@@ -69,7 +69,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:descendantFocusability="blocksDescendants"
         android:orientation="vertical">
 
         <android.support.design.card.MaterialCardView
@@ -161,22 +160,22 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
+                    android:layout_height="?android:attr/actionBarSize"
                     android:orientation="horizontal">
 
                     <ImageButton
                         android:id="@+id/bt_photo"
-                        android:layout_width="?attr/actionBarSize"
-                        android:layout_height="?attr/actionBarSize"
-                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_width="?android:attr/actionBarSize"
+                        android:layout_height="?android:attr/actionBarSize"
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
                         android:tint="@color/colorPrimary"
                         app:srcCompat="@drawable/ic_photo_camera"/>
 
                     <ImageButton
                         android:id="@+id/bt_link"
-                        android:layout_width="?attr/actionBarSize"
-                        android:layout_height="?attr/actionBarSize"
-                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_width="?android:attr/actionBarSize"
+                        android:layout_height="?android:attr/actionBarSize"
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
                         android:tint="@color/colorPrimary"
                         app:srcCompat="@drawable/ic_insert_link"/>
 
@@ -187,10 +186,10 @@
                         android:layout_weight="1"/>
 
                     <ImageButton
-                        android:id="@+id/bt_setting"
-                        android:layout_width="?attr/actionBarSize"
-                        android:layout_height="?attr/actionBarSize"
-                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:id="@+id/bt_ask"
+                        android:layout_width="?android:attr/actionBarSize"
+                        android:layout_height="?android:attr/actionBarSize"
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
                         android:tint="@color/colorPrimary"
                         app:srcCompat="@drawable/ic_send"/>
 
