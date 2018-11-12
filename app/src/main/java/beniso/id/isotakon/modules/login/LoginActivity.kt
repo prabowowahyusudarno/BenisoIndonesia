@@ -46,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
 
     fun signIn(view: View, email: String, password: String) {
         Helpers.showDialogInfo(this, R.string.caption_alert, getString(R.string.caption_close), DialogInterface.OnDismissListener {
-            finish()
+
         }, "Wait ....")
         fbAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, OnCompleteListener<AuthResult> { task ->
             if (task.isSuccessful) {

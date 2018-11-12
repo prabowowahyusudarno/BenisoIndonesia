@@ -19,11 +19,13 @@ import beniso.id.isotakon.models.IsoJawabQuestion
 import beniso.id.isotakon.modules.login.LoginActivity
 import beniso.id.isotakon.modules.sign_up.SignUpActivity
 import beniso.id.isotakon.utils.Helpers
+import com.gc.materialdesign.widgets.ProgressDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fragment_iso_jawab.*
 import kotlinx.android.synthetic.main.fragment_iso_jawab.view.*
+import kotlinx.android.synthetic.main.rsc_util_loading_indeterminate_bar.*
 import org.jetbrains.anko.support.v4.indeterminateProgressDialog
 
 // TODO: Rename parameter arguments, choose names that match
@@ -47,7 +49,6 @@ class IsoJawabFragment : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
     lateinit var mDatabase: DatabaseReference
     var fbAuth = FirebaseAuth.getInstance().currentUser
-//    val mProgressDialog = indeterminateProgressDialog("Pencarian Mentor", "Silakan Menunggu . . .")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,9 +64,9 @@ class IsoJawabFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_iso_jawab, container, false)
         mDatabase = FirebaseDatabase.getInstance().reference
-        view.bt_photo.setOnClickListener { launchCamera() }
+            view.bt_photo.setOnClickListener { launchCamera() }
         view.bt_ask.setOnClickListener {
-            sendAsk()
+            sendAsk(view)
         }
 
         return view
@@ -116,45 +117,55 @@ class IsoJawabFragment : Fragment() {
         startActivity(intent)
     }
 
-    fun sendAsk(){
+    fun sendAsk(view: View){
+        Helpers.showToast(view.context,"Pertanyaan dikirimkan silahkan menunggu sejenak..",true)
         val tsLong = System.currentTimeMillis() / 1000
         val ts = tsLong.toString()
         mDatabase.child("question").child(ts).setValue(IsoJawabQuestion(fbAuth!!.uid,et_post.text.toString(),"null","null","null",ts))
-//        mProgressDialog.show()
-        antrianPenjawab(ts)
+        antrianPenjawab(ts,view)
     }
 
-    fun antrianPenjawab(ts: String){
-        val listener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (dataSnapshot.hasChild("antrian")) {
-                    val myThread = object : Thread() {
-                        override fun run() {
-                            try {
-                                Thread.sleep(10000)
-//                                mProgressDialog.dismiss()
-                                var random = randomPick(dataSnapshot.child("antrian").childrenCount.toInt())
-                                var answerer = dataSnapshot.child("antrian").child(random.toString()).value.toString()
-                                mDatabase.child("question").child(ts).child("answerer").setValue(answerer)
-                            } catch (e: InterruptedException) {
-                                e.printStackTrace()
-                            }
+    fun antrianPenjawab(ts: String,view: View){
+//        val mProgressDialog = ProgressDialog(view.context, "Memilih mentor . . .")
+        fun waitMentorResponse () {
 
+            val listener = object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    if (dataSnapshot.hasChild("antrian")) {
+                        val myThread = object : Thread() {
+                            override fun run() {
+                                try {
+//                                    mProgressDialog.show()
+                                    Thread.sleep(10000)
+                                    var random = randomPick(dataSnapshot.child("antrian").childrenCount.toInt())
+                                    var answerer = dataSnapshot.child("antrian").child(random.toString()).value.toString()
+                                    mDatabase.child("question").child(ts).child("answerer").setValue(answerer)
+//                                    mProgressDialog.dismiss()
+                                } catch (e: InterruptedException) {
+                                    e.printStackTrace()
+                                }
+
+                            }
                         }
-                    }
-                    myThread.start()
+                        myThread.start()
+                    } else waitMentorResponse()
+
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+                    println("loadPost:onCancelled ${databaseError.toException()}")
                 }
             }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-                println("loadPost:onCancelled ${databaseError.toException()}")
-            }
+            mDatabase.child("question").child(ts).addListenerForSingleValueEvent(listener)
         }
-        mDatabase.child("question").child(ts).addListenerForSingleValueEvent(listener)
-
+        waitMentorResponse()
     }
 
     fun randomPick (child: Int): Int? {
         return (1..child).shuffled().first()
     }
-}
+
+
+
+    }
+
