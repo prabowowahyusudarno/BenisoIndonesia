@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,12 +18,14 @@ import beniso.id.isotakon.MainActivity
 import beniso.id.isotakon.R
 import beniso.id.isotakon.models.IsoJawabQuestion
 import beniso.id.isotakon.modules.login.LoginActivity
+import beniso.id.isotakon.modules.mentor.MentorAdapter
 import beniso.id.isotakon.modules.sign_up.SignUpActivity
 import beniso.id.isotakon.utils.Helpers
 import com.gc.materialdesign.widgets.ProgressDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_mentor.*
 import kotlinx.android.synthetic.main.fragment_iso_jawab.*
 import kotlinx.android.synthetic.main.fragment_iso_jawab.view.*
 import kotlinx.android.synthetic.main.rsc_util_loading_indeterminate_bar.*
@@ -49,7 +52,7 @@ class IsoJawabFragment : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
     lateinit var mDatabase: DatabaseReference
     var fbAuth = FirebaseAuth.getInstance().currentUser
-
+    var questionList: MutableList<IsoJawabQuestion> = mutableListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -68,7 +71,7 @@ class IsoJawabFragment : Fragment() {
         view.bt_ask.setOnClickListener {
             sendAsk(view)
         }
-
+        riwayatPertanyaan(view)
         return view
     }
 
@@ -165,7 +168,32 @@ class IsoJawabFragment : Fragment() {
         return (1..child).shuffled().first()
     }
 
+    fun riwayatPertanyaan(view: View){
+        val userId = fbAuth!!.uid.toString()
+        var questioner = ""
+        val listener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val children = dataSnapshot!!.children
+                children.forEach {
+                    questioner = it.child("questioner").value.toString()
+                    if (userId.equals(questioner)) questionList.add(IsoJawabQuestion(questioner,it.child("question").value.toString(),it.child("answerer").value.toString(),it.child("answer").value.toString(),it.child("description").value.toString(),it.key))
+                }
+                setAdapter(view)
+            }
 
+            override fun onCancelled(databaseError: DatabaseError) {
+                println("loadPost:onCancelled ${databaseError.toException()}")
+            }
+        }
+        mDatabase.child("question").addListenerForSingleValueEvent(listener)
+
+    }
+
+    fun setAdapter(view: View){
+        recycler_riwayat_isojawab.layoutManager = LinearLayoutManager(view.context)
+        recycler_riwayat_isojawab.adapter = IsoJawabRiwayatAdapter(view.context, questionList.asReversed()){
+        }
+    }
 
     }
 

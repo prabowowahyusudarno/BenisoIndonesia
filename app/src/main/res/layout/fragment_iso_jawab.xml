@@ -203,74 +203,12 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/spacing_xmedium"/>
 
-        <android.support.design.card.MaterialCardView
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_riwayat_isojawab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardElevation="0dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/spacing_large"
-                    android:layout_marginTop="@dimen/spacing_large"
-                    android:gravity="center_vertical"
-                    android:text="RIWAYAT PERTANYAAN"
-                    android:fontFamily="@font/rubik_bold"
-                    android:textColor="@color/colorPrimary"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/spacing_large"
-                    android:layout_marginStart="@dimen/spacing_large"
-                    android:layout_marginTop="@dimen/spacing_xmedium"
-                    android:background="@android:color/white"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="MATEMATIKA"
-                        android:fontFamily="@font/rubik"
-                        android:textColor="@android:color/black"
-                        android:textSize="16sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/spacing_medium"
-                        android:background="@color/colorPrimary"
-                        android:padding="@dimen/spacing_small"
-                        android:fontFamily="@font/rubik"
-                        android:text="TERJAWAB"
-                        android:textColor="@android:color/white"
-                        android:textSize="10sp"
-                        android:textStyle="bold"/>
-
-                </LinearLayout>
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/spacing_large"
-                    android:layout_marginStart="@dimen/spacing_large"
-                    android:layout_marginTop="@dimen/spacing_xmedium"
-                    android:lines="4"
-                    android:fontFamily="@font/rubik"
-                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing, elit sed"
-                    android:textSize="14sp"/>
-
-
-            </LinearLayout>
-
-        </android.support.design.card.MaterialCardView>
+            android:layout_marginBottom="56dp"
+            />
 
     </LinearLayout>
 

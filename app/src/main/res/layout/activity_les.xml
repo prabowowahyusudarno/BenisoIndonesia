@@ -80,7 +80,6 @@
                             android:layout_height="64dp"
                             android:layout_margin="@dimen/spacing_middle"
                             android:background="@drawable/btn_background_circle"
-                            android:onClick="setSize"
                             android:textSize="24sp"
                             android:fontFamily="@font/rubik_bold"
                             android:text="60"
@@ -119,7 +118,6 @@
                             android:layout_height="64dp"
                             android:layout_margin="@dimen/spacing_middle"
                             android:background="@drawable/btn_background_circle"
-                            android:onClick="setSize"
                             android:textSize="24sp"
                             android:fontFamily="@font/rubik_bold"
                             android:text="90"
@@ -156,7 +154,6 @@
                                 android:layout_height="64dp"
                                 android:layout_margin="@dimen/spacing_middle"
                                 android:background="@drawable/btn_background_circle"
-                                android:onClick="setSize"
                                 android:textSize="24sp"
                                 android:fontFamily="@font/rubik_bold"
                                 android:text="120"
@@ -193,7 +190,6 @@
                                 android:layout_height="64dp"
                                 android:layout_margin="@dimen/spacing_middle"
                                 android:background="@drawable/btn_background_circle"
-                                android:onClick="setSize"
                                 android:textSize="24sp"
                                 android:fontFamily="@font/rubik_bold"
                                 android:text="240"
@@ -261,7 +257,8 @@
                                 android:focusable="true"
                                 android:gravity="center_vertical"
                                 android:minHeight="@dimen/spacing_xxlarge"
-                                android:orientation="horizontal">
+                                android:orientation="horizontal"
+                                android:id="@+id/layout_date_time_picker">
 
                                 <ImageView
                                     android:layout_width="32dp"
@@ -287,11 +284,13 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="12:30"
+                                    android:id="@+id/textview_isoles_time"
                                     android:fontFamily="@font/rubik"
                                     android:textColor="@android:color/black"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
 
                                     <TextView
+                                        android:id="@+id/textview_isoles_date"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="Minggu, 30 Sep 2018"
@@ -551,6 +550,7 @@
                 android:textColor="@color/grey_90" />
 
                 <TextView
+                    android:id="@+id/textview_isoles_totalharga"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rp 110.000"
