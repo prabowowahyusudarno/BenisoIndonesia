@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:id="@+id/container"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@android:color/white"
-              android:orientation="vertical">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/nested_scroll_view"
@@ -24,7 +23,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/spacing_large"/>
+                android:layout_height="@dimen/spacing_large" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -35,11 +34,11 @@
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textColor="@android:color/black"
                 android:textSize="32sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/spacing_large"/>
+                android:layout_height="@dimen/spacing_large" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -48,11 +47,11 @@
                 android:padding="2dp"
                 android:text="@string/isoles"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/grey_80"/>
+                android:textColor="@color/grey_80" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/spacing_mlarge"/>
+                android:layout_height="@dimen/spacing_mlarge" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -75,7 +74,7 @@
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        app:srcCompat="@drawable/math"/>
+                        app:srcCompat="@drawable/math" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -85,14 +84,14 @@
                         android:gravity="center"
                         android:text="Matematika"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/grey_80"/>
+                        android:textColor="@color/grey_80" />
 
 
                 </LinearLayout>
 
                 <View
                     android:layout_width="@dimen/spacing_smlarge"
-                    android:layout_height="0dp"/>
+                    android:layout_height="0dp" />
 
                 <LinearLayout
                     android:id="@+id/kimia"
@@ -111,7 +110,7 @@
                         android:id="@+id/image"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        app:srcCompat="@drawable/chemistry"/>
+                        app:srcCompat="@drawable/chemistry" />
 
                     <TextView
                         android:id="@+id/title"
@@ -122,7 +121,7 @@
                         android:gravity="center"
                         android:text="Kimia"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/grey_80"/>
+                        android:textColor="@color/grey_80" />
 
 
                 </LinearLayout>
@@ -131,7 +130,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/spacing_smlarge"/>
+                android:layout_height="@dimen/spacing_smlarge" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -154,7 +153,7 @@
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        app:srcCompat="@drawable/physics"/>
+                        app:srcCompat="@drawable/physics" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -164,14 +163,14 @@
                         android:gravity="center"
                         android:text="Fisika"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/grey_80"/>
+                        android:textColor="@color/grey_80" />
 
 
                 </LinearLayout>
 
                 <View
                     android:layout_width="@dimen/spacing_smlarge"
-                    android:layout_height="0dp"/>
+                    android:layout_height="0dp" />
 
                 <LinearLayout
                     android:id="@+id/bahasa"
@@ -189,7 +188,7 @@
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        app:srcCompat="@drawable/language"/>
+                        app:srcCompat="@drawable/language" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -199,7 +198,7 @@
                         android:gravity="center"
                         android:text="Bahasa"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/grey_80"/>
+                        android:textColor="@color/grey_80" />
 
 
                 </LinearLayout>

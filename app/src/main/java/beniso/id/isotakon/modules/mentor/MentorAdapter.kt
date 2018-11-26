@@ -6,21 +6,16 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.EditText
-import android.widget.TextView
-import beniso.id.isotakon.R
 import beniso.id.isotakon.R.layout.activity_mentor_item
-import beniso.id.isotakon.models.IsoJawabQuestion
+import beniso.id.isotakon.models.IsoJawabQuestionModel
 import com.gc.materialdesign.widgets.ProgressDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.activity_mentor_item.*
-import org.jetbrains.anko.support.v4.indeterminateProgressDialog
-import kotlin.reflect.jvm.internal.impl.load.java.lazy.ContextKt
 
-class MentorAdapter(private val context: Context, private val items: List<IsoJawabQuestion>, private val listener: (IsoJawabQuestion) -> Unit)
+class MentorAdapter(private val context: Context, private val items: List<IsoJawabQuestionModel>, private val listener: (IsoJawabQuestionModel) -> Unit)
     : RecyclerView.Adapter<MentorAdapter.ViewHolder>() {
 
     lateinit var mDatabase: DatabaseReference
@@ -42,7 +37,7 @@ class MentorAdapter(private val context: Context, private val items: List<IsoJaw
         lateinit var mDatabase: DatabaseReference
         var fbAuth = FirebaseAuth.getInstance().currentUser
 
-        fun bindItem(items: IsoJawabQuestion, listener: (IsoJawabQuestion) -> Unit) {
+        fun bindItem(items: IsoJawabQuestionModel, listener: (IsoJawabQuestionModel) -> Unit) {
 
             var questionName = "Nama : " + items.questioner
             var questionText = "Pertanyaan : " + items.question

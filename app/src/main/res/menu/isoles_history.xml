@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/isoles_history"
+        android:icon="@drawable/ic_history_black_24dp"
+        android:iconTint="@color/md_white_1000"
+        android:title="history"
+        app:showAsAction="ifRoom"/>
+</menu>

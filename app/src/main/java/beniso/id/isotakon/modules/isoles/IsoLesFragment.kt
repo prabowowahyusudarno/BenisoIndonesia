@@ -5,11 +5,13 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
+import android.view.*
 import android.widget.LinearLayout
 import beniso.id.isotakon.R
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,22 +33,25 @@ class IsoLesFragment : Fragment() {
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_iso_les, container, false)
+
         val matematika = view.findViewById<LinearLayout>(R.id.matematika)
         val kimia = view.findViewById<LinearLayout>(R.id.kimia)
         val fisika = view.findViewById<LinearLayout>(R.id.fisika)
         val bahasa = view.findViewById<LinearLayout>(R.id.bahasa)
-
         matematika.setOnClickListener {
             val intent = Intent(context, LesActivity::class.java)
             intent.putExtra("mapel", "Matematika")
@@ -108,5 +113,24 @@ class IsoLesFragment : Fragment() {
     companion object {
         @JvmStatic
         fun newInstance(): IsoLesFragment = IsoLesFragment()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.isoles_history, menu)
+
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+            (when (item.itemId) {
+            R.id.isoles_history -> {
+                val intent = Intent(context, IsoLesRiwayatActivity::class.java)
+                requireActivity().startActivity(intent)
+                return true
+            }
+            else ->
+                return super.onOptionsItemSelected(item)
+
+        })
     }
 }

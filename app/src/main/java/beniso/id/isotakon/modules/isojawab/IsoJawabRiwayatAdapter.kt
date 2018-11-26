@@ -1,28 +1,16 @@
 package beniso.id.isotakon.modules.isojawab
 
-import android.app.AlertDialog
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.EditText
-import android.widget.TextView
-import beniso.id.isotakon.R
-import beniso.id.isotakon.R.layout.activity_mentor_item
 import beniso.id.isotakon.R.layout.item_iso_jawab
-import beniso.id.isotakon.models.IsoJawabQuestion
-import com.gc.materialdesign.widgets.ProgressDialog
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
+import beniso.id.isotakon.models.IsoJawabQuestionModel
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.activity_mentor_item.*
 import kotlinx.android.synthetic.main.item_iso_jawab.*
-import org.jetbrains.anko.support.v4.indeterminateProgressDialog
-import kotlin.reflect.jvm.internal.impl.load.java.lazy.ContextKt
 
-class IsoJawabRiwayatAdapter(private val context: Context, private val items: List<IsoJawabQuestion>, private val listener: (IsoJawabQuestion) -> Unit)
+class IsoJawabRiwayatAdapter(private val context: Context, private val items: List<IsoJawabQuestionModel>, private val listener: (IsoJawabQuestionModel) -> Unit)
     : RecyclerView.Adapter<IsoJawabRiwayatAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
@@ -37,7 +25,7 @@ class IsoJawabRiwayatAdapter(private val context: Context, private val items: Li
     class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView),
             LayoutContainer {
 
-        fun bindItem(items: IsoJawabQuestion, listener: (IsoJawabQuestion) -> Unit) {
+        fun bindItem(items: IsoJawabQuestionModel, listener: (IsoJawabQuestionModel) -> Unit) {
             var status = ""
             if (items.answerer.equals("null")) status = "Belum Terjawab"
             else if (items.answer.equals("null")) status = "Sedang Dikerjakan"

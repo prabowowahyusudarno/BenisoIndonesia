@@ -26,6 +26,7 @@
         <activity android:name=".modules.isoles.LesActivity" />
         <activity android:name=".modules.sign_up.SignUpActivity"></activity>
         <activity android:name=".modules.mentor.MentorActivity"></activity>
+        <activity android:name=".modules.isoles.IsoLesRiwayatActivity"></activity>
     </application>
 
 </manifest>

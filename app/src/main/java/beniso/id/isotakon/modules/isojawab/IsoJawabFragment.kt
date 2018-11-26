@@ -1,8 +1,6 @@
 package beniso.id.isotakon.modules.isojawab
 
-import android.content.ContentValues
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -12,24 +10,16 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import beniso.id.isotakon.MainActivity
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 
 import beniso.id.isotakon.R
-import beniso.id.isotakon.models.IsoJawabQuestion
-import beniso.id.isotakon.modules.login.LoginActivity
-import beniso.id.isotakon.modules.mentor.MentorAdapter
-import beniso.id.isotakon.modules.sign_up.SignUpActivity
+import beniso.id.isotakon.models.IsoJawabQuestionModel
 import beniso.id.isotakon.utils.Helpers
-import com.gc.materialdesign.widgets.ProgressDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_mentor.*
 import kotlinx.android.synthetic.main.fragment_iso_jawab.*
 import kotlinx.android.synthetic.main.fragment_iso_jawab.view.*
-import kotlinx.android.synthetic.main.rsc_util_loading_indeterminate_bar.*
-import org.jetbrains.anko.support.v4.indeterminateProgressDialog
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,30 +36,24 @@ private const val ARG_PARAM2 = "param2"
  *
  */
 class IsoJawabFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
     private var listener: OnFragmentInteractionListener? = null
     lateinit var mDatabase: DatabaseReference
     var fbAuth = FirebaseAuth.getInstance().currentUser
-    var questionList: MutableList<IsoJawabQuestion> = mutableListOf()
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-
-
-        }
-    }
+    var questionModelList: MutableList<IsoJawabQuestionModel> = mutableListOf()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_iso_jawab, container, false)
         mDatabase = FirebaseDatabase.getInstance().reference
-            view.bt_photo.setOnClickListener { launchCamera() }
+
+        val mapel = arrayOf("Kimia", "Matematika", "Biologi", "Fisika","Bahasa")
+        val spinner = view.findViewById<Spinner>(R.id.spinner_pilih_mapel)
+        spinner.adapter = ArrayAdapter(activity, android.R.layout.simple_spinner_dropdown_item, mapel)
+
+        view.bt_photo.setOnClickListener { launchCamera() }
         view.bt_ask.setOnClickListener {
-            sendAsk(view)
+            sendAsk(view,spinner)
         }
         riwayatPertanyaan(view)
         return view
@@ -105,7 +89,7 @@ class IsoJawabFragment : Fragment() {
      * (http://developer.android.com/training/basics/fragments/communicating.html)
      * for more information.
      */
-     interface OnFragmentInteractionListener {
+    interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri)
     }
@@ -120,17 +104,17 @@ class IsoJawabFragment : Fragment() {
         startActivity(intent)
     }
 
-    fun sendAsk(view: View){
-        Helpers.showToast(view.context,"Pertanyaan dikirimkan silahkan menunggu sejenak..",true)
+    fun sendAsk(view: View,spinner: Spinner) {
+        Helpers.showToast(view.context, "Pertanyaan dikirimkan silahkan menunggu sejenak..", true)
         val tsLong = System.currentTimeMillis() / 1000
         val ts = tsLong.toString()
-        mDatabase.child("question").child(ts).setValue(IsoJawabQuestion(fbAuth!!.uid,et_post.text.toString(),"null","null","null",ts))
-        antrianPenjawab(ts,view)
+        mDatabase.child("question").child(ts).setValue(IsoJawabQuestionModel(fbAuth!!.uid, et_post.text.toString(), "null", "null", spinner.selectedItem.toString(), ts))
+        antrianPenjawab(ts, view)
     }
 
-    fun antrianPenjawab(ts: String,view: View){
-//        val mProgressDialog = ProgressDialog(view.context, "Memilih mentor . . .")
-        fun waitMentorResponse () {
+    fun antrianPenjawab(ts: String, view: View) {
+        //        val mProgressDialog = ProgressDialog(view.context, "Memilih mentor . . .")
+        fun waitMentorResponse() {
 
             val listener = object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -164,11 +148,11 @@ class IsoJawabFragment : Fragment() {
         waitMentorResponse()
     }
 
-    fun randomPick (child: Int): Int? {
+    fun randomPick(child: Int): Int? {
         return (1..child).shuffled().first()
     }
 
-    fun riwayatPertanyaan(view: View){
+    fun riwayatPertanyaan(view: View) {
         val userId = fbAuth!!.uid.toString()
         var questioner = ""
         val listener = object : ValueEventListener {
@@ -176,7 +160,7 @@ class IsoJawabFragment : Fragment() {
                 val children = dataSnapshot!!.children
                 children.forEach {
                     questioner = it.child("questioner").value.toString()
-                    if (userId.equals(questioner)) questionList.add(IsoJawabQuestion(questioner,it.child("question").value.toString(),it.child("answerer").value.toString(),it.child("answer").value.toString(),it.child("description").value.toString(),it.key))
+                    if (userId.equals(questioner)) questionModelList.add(IsoJawabQuestionModel(questioner, it.child("question").value.toString(), it.child("answerer").value.toString(), it.child("answer").value.toString(), it.child("description").value.toString(), it.key))
                 }
                 setAdapter(view)
             }
@@ -189,11 +173,11 @@ class IsoJawabFragment : Fragment() {
 
     }
 
-    fun setAdapter(view: View){
+    fun setAdapter(view: View) {
         recycler_riwayat_isojawab.layoutManager = LinearLayoutManager(view.context)
-        recycler_riwayat_isojawab.adapter = IsoJawabRiwayatAdapter(view.context, questionList.asReversed()){
+        recycler_riwayat_isojawab.adapter = IsoJawabRiwayatAdapter(view.context, questionModelList.asReversed()) {
         }
     }
 
-    }
+}
 
