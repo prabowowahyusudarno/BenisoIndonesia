@@ -59,7 +59,7 @@ class MentorAdapter(private val context: Context, private val items: List<IsoJaw
                     if (!answerer.equals("null")) {
                         mProgressDialog.dismiss()
                         if (answerer.equals(fbAuth!!.uid)){
-                            menjawab(questionText)
+                            menjawab(questionText,ts)
                         }
                     } else if (counter == 0) {
                         var children = dataSnapshot.child("antrian").childrenCount + 1
@@ -75,13 +75,16 @@ class MentorAdapter(private val context: Context, private val items: List<IsoJaw
             mDatabase.child("question").child(ts).addListenerForSingleValueEvent(listener)
         }
 
-        fun menjawab(question: String) {
+        fun menjawab(question: String,ts: String) {
             val alert = AlertDialog.Builder(containerView.context)
-            val itemEditText = EditText(containerView.context)
+            var itemEditText = EditText(containerView.context)
             alert.setMessage("Jawab Pertanyaan")
             alert.setTitle(question)
             alert.setView(itemEditText)
-            alert.setPositiveButton("Submit") { dialog, positiveButton -> }
+            alert.setPositiveButton("Submit") {
+                dialog, positiveButton ->
+                mDatabase.child("question").child(ts).child("answer").setValue(itemEditText.text.toString())
+            }
             alert.show()
 
 

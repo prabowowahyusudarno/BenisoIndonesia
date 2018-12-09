@@ -25,8 +25,8 @@
             android:background="@color/colorPrimary">
 
 
-            <ImageView
-                android:id="@+id/tv_location"
+            <TextView
+                android:id="@+id/tv_question"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/spacing_large"
@@ -34,9 +34,7 @@
                 android:textSize="16sp"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
-                app:srcCompat="@drawable/ic_location"
-                android:tint="@color/md_white_1000"
-                tools:text="@string/middle_lorem_ipsum"/>
+                tools:text=""/>
 
         </FrameLayout>
 
@@ -65,48 +63,48 @@
                 android:layout_height="0dp"/>
 
             <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_siswa_isoles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:gravity="center_vertical"
+                android:textSize="14sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/grey_90"
+                tools:text="Tommy Wahyu"/>
 
-                <TextView
-                    android:id="@+id/tv_mentor_riwayat_isoles"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:textSize="14sp"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/grey_90"
-                    tools:text="Tommy Wahyu"/>
+            <TextView
+                android:id="@+id/tv_date_isoles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end|right"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/grey_40"
+                android:text="Kamis, 4 November 2018"/>
+            <TextView
+                android:id="@+id/tv_time_isoles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end|right"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/grey_40"
+                android:text="09.00 - 11.00"/>
+            <TextView
+                android:id="@+id/tv_mapel_isoles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end|right"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/grey_40"
+                android:text="Matematika"/>
 
-                <TextView
-                    android:id="@+id/tv_date_riwayat_isoles"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="end|right"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/grey_40"
-                    android:text="Kamis, 4 November 2018"/>
-                <TextView
-                    android:id="@+id/tv_time_riwayat_isoles"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="end|right"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/grey_40"
-                    android:text="09.00 - 11.00"/>
-                <TextView
-                    android:id="@+id/tv_mapel_riwayat_isoles"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="end|right"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/grey_40"
-                    android:text="Matematika"/>
-
-            </LinearLayout>
+        </LinearLayout>
 
         </LinearLayout>
 
@@ -124,20 +122,12 @@
             android:padding="@dimen/spacing_large">
 
             <TextView
-                android:id="@+id/tv_tarif"
+                android:id="@+id/bt_confirm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:gravity="center_vertical"
-                android:text="Rp. 100000"
-                android:textColor="@color/colorPrimary"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/tv_status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Confirmed"
+                android:text="@string/status_isoles_confirm"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"/>
 

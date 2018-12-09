@@ -10,6 +10,7 @@ import beniso.id.isotakon.models.IsoLestTutorModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_mentor.*
+import kotlinx.android.synthetic.main.fragment_mentor_isojawab.*
 
 class IsoLesRiwayatActivity : AppCompatActivity() {
 
@@ -21,7 +22,7 @@ class IsoLesRiwayatActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mentor)
+        setContentView(R.layout.fragment_mentor_isojawab)
         val toolbar = findViewById<Toolbar>(R.id.toolbarMentor)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -37,7 +38,7 @@ class IsoLesRiwayatActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val children = dataSnapshot!!.children
                 children.forEach {
-                    riwayatModelList.add(IsoLestTutorModel(it.child("latitude").value.toString(),it.child("longitude").value.toString(),it.child("mapel").value.toString(),it.child("idMentor").value.toString(),it.child("mulai").value.toString(),it.child("selesai").value.toString(),it.child("siswa").value.toString(),it.child("tarif").value.toString(),it.child("mentor").value.toString()))
+                    riwayatModelList.add(IsoLestTutorModel(it.key.toString(),it.child("latitude").value.toString(),it.child("longitude").value.toString(),it.child("mapel").value.toString(),it.child("idMentor").value.toString(),it.child("mulai").value.toString(),it.child("selesai").value.toString(),it.child("siswa").value.toString(),it.child("tarif").value.toString(),it.child("mentor").value.toString(),it.child("status").value.toString()))
                 }
                 setAdapter()
             }

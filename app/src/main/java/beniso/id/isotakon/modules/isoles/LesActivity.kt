@@ -93,7 +93,7 @@ class LesActivity : AppCompatActivity() {
                     mentorTerpilih = mentor[randomPick(counter - 1)].toString()
                     val tsLong = System.currentTimeMillis() / 1000
                     val ts = tsLong.toString()
-                    mDatabase.child("janjian_les").child(ts).setValue(IsoLestTutorModel("latitude", "longitude", mapel, mentorTerpilih, date.toString(), time.toString(), fbAuth?.uid.toString(), tarif, dataSnapshot.child(mentorTerpilih).child("nama").value.toString()))
+                    mDatabase.child("janjian_les").child(ts).setValue(IsoLestTutorModel(ts,"latitude", "longitude", mapel, mentorTerpilih, date.toString(), time.toString(), fbAuth?.uid.toString(), tarif, dataSnapshot.child(mentorTerpilih).child("nama").value.toString(),"MENUNGGU"))
                     Helpers.showToast(applicationContext, "Mentor didapatkan", true)
                 } catch (e: Exception) {
                     Helpers.showToast(applicationContext, "Mentor tidak tersedia", true)

@@ -33,7 +33,7 @@ class IsoLesRiwayatAdapter(private val context: Context, private val items: List
             tv_tarif.text = "Rp. ${items.tarif}"
             tv_date_riwayat_isoles.text = items.mulai
             tv_time_riwayat_isoles.text = items.selesai
-
+            tv_status.text = items.status
             containerView.setOnClickListener {
 
             }
